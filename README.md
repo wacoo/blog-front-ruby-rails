@@ -1,11 +1,6 @@
 
 ## Getting Started
 
-This repository includes files with plain SQL that can be used to recreate a database:
-
-- Use [schema.sql](./schema.sql) to create all tables and add tables.
-**Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!**
-
 <a name="readme-top"></a>
 
 <!--
@@ -53,11 +48,11 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Vet Clinic Database <a name="about-project"></a>
+# 📖 Blog Front <a name="about-project"></a>
 
 
 
-**Clinic Database** is a PostgreSQL database designed to store information about patients. It includes essential details such as medial histories and treatments. This database serves as a comprehensive repository for managing and tracking various aspects of patients' health within clinic. With its structured data storage capabilities, the Clinic Database enables efficient management and retrieval of animal information for effective patient care and administration.
+**Blog Front** Blog Front is a user-friendly web application that enables users to engage with blog content effortlessly. With an intuitive interface, readers can explore a variety of blog posts, express their opinions through comments, and show appreciation by liking their favorite articles. The app aims to foster a vibrant community by encouraging meaningful discussions and providing a seamless experience for users to interact with captivating blog content. Whether it's sharing thoughts or expressing support, Blog Front brings readers closer to the blogs they love through its interactive comment and like options.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -78,13 +73,12 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features <a name="key-features"></a>
 
-The database store the following data:
+The app has the following features:
 
-- **Patients**
-- **Medical histiries**
-- **Treatments**
-- **Invoices**
-- **Invoice items**
+- **Add blog**
+- **Add comments**
+- **Add user**
+- **Like blog**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -106,10 +100,13 @@ Example command:
 
 ### Setup
 Clone the repository to desired directory on local computer.
-> `git clone https://github.com/wacoo/clinic-database`
+> `git clone https://github.com/wacoo/blog-front-ruby-rails`
 
-> `cd clinic-database`
-> `run the SQL statements in the schema_based_on_diagram.sql`
+> `cd blog-front-ruby-rails`
+
+> `bundle install`
+
+> `rails s`
 
 ## 👥 Author <a name="authors"></a>
 
@@ -117,19 +114,14 @@ Clone the repository to desired directory on local computer.
 - Twitter: [@wabaham9](https://twitter.com/wabaham9)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/wondmagegn-abriham-b867289a)
 
-👤 **Faisal Mumtaz**
-
-- GitHub: [@faisalakb](https://github.com/faisalakb)
-- Twitter: [@faisalakb786](https://twitter.com/Faisalakb786)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/faisal-mumtaz-514a221a6/)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
-- Add more tables and relationships
-- Add more queries
+- Add operation logic
+- Add views
+- Add controllers
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
@@ -153,7 +145,6 @@ Feel free to check the [issues page](../../issues/).
 <!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
-- This project is based on a template from Microverse full-stack web development school curriculum. You can find the template <a href="https://github.com/microverseinc/curriculum-template-databases">here</a>. Make sure you have access rights to the template.
 - I  want to thank all my clients for their patronage.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
