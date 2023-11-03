@@ -1,10 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  # let!(:user1) { User.create(name: 'John', posts_counter: 3) }
-  # let!(:user2) { User.create(name: 'Jane', posts_counter: 1) }
-  # let!(:user3) { User.create(name: 'Alice', posts_counter: 2) }
-
   subject { User.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.', posts_counter: 0) }
   before { subject.save }
 
@@ -33,12 +29,17 @@ RSpec.describe User, type: :model do
     expect(subject).to be_valid
   end
 
-  it 'returns the three most recent users' do
+  it 'returns the three most recent posts' do
     user1 = User.create(name: 'John', photo: 'https://example.com/photo1.jpg', bio: 'Bio 1', posts_counter: 3)
-    user2 = User.create(name: 'Jane', photo: 'https://example.com/photo2.jpg', bio: 'Bio 2', posts_counter: 1)
-    user3 = User.create(name: 'Alice', photo: 'https://example.com/photo3.jpg', bio: 'Bio 3', posts_counter: 2)
+    Post.create(author: user1, title: 'Hello', text: 'This is my first post', comments_counter: 0, likes_counter: 0)
+    post2 = Post.create(author: user1, title: 'Hello', text: 'This is my first post', comments_counter: 0,
+                        likes_counter: 0)
+    post3 = Post.create(author: user1, title: 'Hello', text: 'This is my first post', comments_counter: 0,
+                        likes_counter: 0)
+    post4 = Post.create(author: user1, title: 'Hello', text: 'This is my first post', comments_counter: 0,
+                        likes_counter: 0)
 
-    recent_users = User.recent_three.to_a
-    expect(recent_users).to match_array([user1, user3, user2])
+    recent_posts = user1.recent_three_posts.to_a
+    expect(recent_posts).to match_array([post4, post3, post2])
   end
 end
