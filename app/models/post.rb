@@ -6,11 +6,13 @@ class Post < ApplicationRecord
   has_many :likes
   belongs_to :author, class_name: 'User'
 
-  def self.five_recent_comments
-    comments = Comment.joins(post: :author).order('comments.created_at DESC').limit(5)
-    comments.map do |cmt|
-      "User: #{cmt.post.author.name}, Comment: #{cmt.text}, Date: #{cmt.created_at}"
-    end
+  validates :title, presence: true
+  validates :title, length: { maximum: 250 }
+  validates :comments_counter, numericality: { greater_than_or_equal_to: 0 }
+  validates :likes_counter, numericality: { greater_than_or_equal_to: 0 }
+
+  def five_recent_comments
+    comments.order(created_at: :desc).limit(5)
   end
 
   private
