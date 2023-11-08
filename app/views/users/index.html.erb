@@ -7,10 +7,5 @@
 </head>
 <body>
     <h1>Here is a list users</h1>
-    <ul>
-    <% @users.to_a.each do |user| %>
-        <li><%= "Name: #{user.name}, Photo: #{user.photo}, Bio: #{user.bio}, 'Post count': #{user.posts_counter.to_i}, Creation data: #{user.created_at}" %></li>
-      <% end %>
-    </ul>
 </body>
 </html>

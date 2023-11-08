@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'rails-controller-testing'
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 ruby '2.7.4'
