@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+</head>
+<body>
+    <h1>Here is a user</h1>
+    <%= "Name: #{@user.name}, Photo: #{@user.photo}, Bio: #{@user.bio}, 'Post count': #{@user.posts_counter.to_i}, Creation data: #{@user.created_at}" %>
+</body>
+</html>

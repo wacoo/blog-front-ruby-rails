@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+</head>
+<body>
+    <h1>Here is a post</h1>
+    <%= "Title: #{@post.title}, Comment_count: #{@post.comments_counter.to_i}, Like_count: #{@post.likes_counter.to_i}, 'Post date': #{@post.created_at}" %>
+</body>
+</html>
