@@ -1,4 +1,3 @@
-
 ## Getting Started
 
 <a name="readme-top"></a>
@@ -58,7 +57,14 @@ After you're finished please remove all the comments and instructions!
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> 
+>
+
+<details>
+  <summary>Ruby on Rails</summary>
+  <ul>
+    <li><a href="https://guides.rubyonrails.org/">Ruby on Rails</a></li>
+  </ul>
+</details>
 
 <details>
   <summary>Database</summary>
@@ -89,24 +95,37 @@ The app has the following features:
 ### Prerequisites
 
 In order to run this project you need:
+- Browser
+- IDE
 - PostgreSQL database installed
-<!--
-Example command:
+- Ruby on Rails
+- Ruby
 
-```sh
- gem install rails
-```
- -->
 
 ### Setup
 Clone the repository to desired directory on local computer.
-> `git clone https://github.com/wacoo/blog-front-ruby-rails`
+```
+   git clone https://github.com/wacoo/blog-front-ruby-rails
 
-> `cd blog-front-ruby-rails`
+   cd blog-front-ruby-rails
+```
 
-> `bundle install`
-
-> `rails s`
+### Install
+To install the project please run this command:
+```
+bundle install
+```
+### Usage
+To start the project please run this commands:
+```
+rails db:create db:migrate
+rails s
+```
+### Test
+To run the tests please run this command:
+```
+rspec spec
+```
 
 ## 👥 Author <a name="authors"></a>
 
