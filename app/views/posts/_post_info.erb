@@ -1,0 +1,12 @@
+<div class="user-info-container">
+    <div class="post">
+        <div class="post-title">
+            <p class="title"><%= post.title %> by <%= post.author.name%></p>
+            <div class="reaction">
+                <p>Comments: <%= post.comments_counter.to_i %></p> 
+                <p>Likes: <%= post.likes_counter.to_i %></p> 
+            </div>
+        </div>
+        <p><%= post.text %></p>
+    </div>
+</div>

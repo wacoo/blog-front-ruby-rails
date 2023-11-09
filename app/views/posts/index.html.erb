@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Posts</title>
-</head>
-<body>
-    <h1>Here is a list of posts</h1>
-</body>
-</html>
+<div class="bloggers">
+    <h1>Bloggers</h1>
+
+    
+    <div class="users">
+        <%= render partial: 'users/blogger', locals: {user: @user} %>
+        <% @user.recent_three_posts.each do |post| %>
+            <%= render partial: 'post', locals: {post: post} %>
+            <%= render partial: 'comments', locals: {post: post} %>
+        <% end %>
+    </div>
+    
+</div>
