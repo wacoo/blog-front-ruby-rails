@@ -3,17 +3,22 @@
         <h2>Bio</h2>
         <p><%= user.bio %></p>
     </div>
-    <% counter = 0 %>
-    <% user.posts.each_with_index do |post, idx| %>
-        <% if counter < 2 %>
-            <div class="post">
-            <h2>Post: <%= post.title %></h2>
-            <p><%= post.text %></p>
+
+    <div class="display1 posts-expanded">
+        <% user.posts.each do |post, idx| %>
+            <div class="display1 post">
+                <h2><%= link_to "Post: #{post.title}", user_post_path(post.author, post) %></h2>
+                <p><%= post.text %></p>
             </div>
-            <% counter += 1 %>
-        <% else %>
-            <% break %>
-        <% end %>
-    <% end %>
-    <button id="see-all">See all posts</button>
+        <% end %>    
+    </div>
+    <div class="display2 posts-relaxed">
+        <% user.recent_three_posts.each do |post, idx| %>
+            <div class="post">
+                <h2><%= link_to "Post: #{post.title}", user_post_path(post.author, post) %></h2>
+                <p><%= post.text %></p>
+            </div>
+        <% end %>    
+    </div>
+    <button id="all">See all posts</button>
 </div>

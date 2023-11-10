@@ -50,6 +50,11 @@ h1 {
   border-radius: 10px;
 }
 
+.user a {
+  text-decoration: none;
+  color: #000;
+}
+
 .bloggers .photo {
   width: 120px;
   height: 108px;
@@ -95,6 +100,16 @@ h1 {
   font-weight: 700;
 }
 
+.post a {
+  text-decoration: none;
+  color: #000;
+}
+
+.post a:hover,
+.user a:hover {
+  color: gray;
+}
+
 .posts-comments {
   background-color: aliceblue;
   border: #000 solid 2px;
@@ -115,4 +130,20 @@ h1 {
   width: 60%;
   margin-left: 12px;
   font-weight: 700;
+}
+
+.user-info-container .posts-relaxed {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-info-container .posts-expanded {
+  display: none;
+}
+
+button:hover,
+button:active {
+  background-color: #000;
+  color: #fff;
+  border: #fff solid 2px;
 }
