@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post</title>
-</head>
-<body>
-    <h1>Here is a post</h1>
-</body>
-</html>
+<div class="bloggers">
+    <h1>Bloggers</h1>
+
+    
+    <div class="users">
+        <%= render partial: 'post_info', locals: {post: @post} %>
+        <%= render partial: 'comments_info', locals: {post: @post} %>
+    </div>
+    
+</div>

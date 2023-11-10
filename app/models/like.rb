@@ -1,5 +1,5 @@
 class Like < ApplicationRecord
-  after_initialize :update_likes_counter
+  after_create :update_likes_counter
   belongs_to :user, class_name: 'User'
   belongs_to :post, class_name: 'Post'
 

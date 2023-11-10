@@ -1,0 +1,12 @@
+
+<div>
+    <div class = "photo">
+        <%= image_tag(user.photo) %>
+    </div>
+    <div class="user">
+        <h2 class="name"><%= link_to user.name, user_path(user.id) %></h2>
+        <h2 class="no_posts">Number of posts: <%= user.posts_counter.to_i %></h2>
+    </div>
+</div>
+
+

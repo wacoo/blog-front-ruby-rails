@@ -1,0 +1,22 @@
+<div class="user-info-container">
+    <div class="bio">
+        <h2>Bio</h2>
+        <p><%= user.bio %></p>
+    </div>
+    <div class="display2 posts-relaxed">
+        <% user.recent_three_posts.each do |post, idx| %>
+            <div class="post">
+                <h2><%= link_to "Post: #{post.title}", user_post_path(post.author, post) %></h2>
+                <p><%= post.text %></p>
+            </div>
+        <% end %>    
+    </div>
+    <button id="all">See all posts</button>
+</div>
+
+<%= javascript_tag do %>
+    document.getElementById('all').addEventListener('click', function() {
+      var userId = '<%= user.id %>';
+      window.location.href = `/users/${userId}/posts`;
+    });
+  <% end %>

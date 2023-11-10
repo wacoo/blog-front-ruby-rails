@@ -1,15 +1,149 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+  width: 90%;
+  background-color: lightblue;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+}
+
+.bloggers {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bloggers div {
+  /* width: calc(100% - 48px); */
+  display: flex;
+  margin: 12px 24px;
+}
+
+.users {
+  width: 90%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.users div {
+  width: calc(100% - 48px);
+}
+
+.user {
+  height: 120px;
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: black solid 1px;
+  border-radius: 10px;
+}
+
+.user a {
+  text-decoration: none;
+  color: #000;
+}
+
+.bloggers .photo {
+  width: 120px;
+  height: 108px;
+  border: 1px solid black;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.photo img {
+  width: 108px;
+}
+
+.name {
+  font-size: 40px;
+}
+
+.no_posts {
+  font-size: 20px;
+}
+
+.user-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-info-container .post,
+.user-info-container .bio,
+.posts-comments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: black solid 1px;
+  border-radius: 10px;
+}
+
+.user-info-container button {
+  width: 200px;
+  height: 35px;
+  background-color: #fff;
+  border: #000 solid 2px;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+.post a {
+  text-decoration: none;
+  color: #000;
+}
+
+.post a:hover,
+.user a:hover {
+  color: gray;
+}
+
+.posts-comments {
+  background-color: aliceblue;
+  border: #000 solid 2px;
+}
+
+.reaction {
+  display: flex;
+  justify-content: right;
+}
+
+.reaction p {
+  margin-right: 24px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.post-title .title {
+  width: 60%;
+  margin-left: 12px;
+  font-weight: 700;
+}
+
+.user-info-container .posts-relaxed {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-info-container .posts-expanded {
+  display: none;
+}
+
+button:hover,
+button:active {
+  background-color: #000;
+  color: #fff;
+  border: #fff solid 2px;
+}
