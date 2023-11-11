@@ -1,0 +1,11 @@
+<%= form_with(model: @post, url: user_post_likes_path(user_id: @user.id, post_id: @post.id), method: :post, local: true) do |form| %>
+    <% if @post.liked_by?(@user) %>
+      <%= form.submit 'Liked', class: 'btn btn-primary', disabled: true  do %>
+        <i class="bi bi-heart-fill"></i> Unlike
+      <% end %>
+    <% else %>
+      <%= form.submit 'Like', class: 'btn btn-outline-primary' do %>
+        <i class="bi bi-heart"></i> Like
+      <% end %>
+    <% end %>
+  <% end %>

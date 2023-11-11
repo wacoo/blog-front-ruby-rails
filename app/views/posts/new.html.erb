@@ -1,0 +1,7 @@
+<div class="post-form">
+    <% if flash[:error] %>
+        <%= flash[:error] %>
+    <% end %>
+    <h1> Create a post</h1>
+    <%= render partial: 'new_form'%>
+</div>

@@ -1,0 +1,5 @@
+<%= form_with model: @post, url: user_posts_path(@post.author) do |form| %>
+    <%= form.text_field :title, placeholder: "Title" %>
+    <%= form.text_area :text, placeholder: "Write something..."%>
+    <%= form.submit "Create a post", class: "submit-button" %>
+<% end %>
