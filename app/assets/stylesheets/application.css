@@ -91,6 +91,14 @@ h1 {
   border-radius: 10px;
 }
 
+form input,
+form textarea,
+form button {
+  width: 100%;
+  height: 20px;
+  margin: 12px 0;
+}
+
 .user-info-container button {
   width: 200px;
   height: 35px;
@@ -98,6 +106,10 @@ h1 {
   border: #000 solid 2px;
   border-radius: 5px;
   font-weight: 700;
+}
+
+.users form {
+  width: 60%;
 }
 
 .post a {
@@ -141,9 +153,52 @@ h1 {
   display: none;
 }
 
+.submit-button {
+  height: 35px;
+  background-color: #fff;
+  border: #000 solid 2px;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
 button:hover,
-button:active {
+button:active,
+.submit-button:hover,
+.submit-button:active {
   background-color: #000;
   color: #fff;
   border: #fff solid 2px;
+}
+
+/*  forms */
+.post-form {
+  width: 80%;
+  border: #000 solid 1px;
+  border-radius: 10px;
+  padding: 24px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.post-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form textarea {
+  height: 100px;
+}
+
+.post form {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
+
+.post form input {
+  width: 60px;
+  height: 25px;
+  margin-right: 50px;
 }

@@ -3,8 +3,13 @@
 
     
     <div class="users">
-        <%= render partial: 'post_info', locals: {post: @post} %>
-        <%= render partial: 'comments_info', locals: {post: @post} %>
+        <%= flash[:success] %>
+        <%= flash[:error] %>
+        <%= render partial: 'posts/post_info', locals: {post: @post} %>
+        <%= render partial: 'posts/comments_info', locals: {post: @post} %>
+        <h2>New comment </h2>
+        <%= render 'comments/new', comment: @comment %>
+        
     </div>
     
 </div>
