@@ -99,7 +99,8 @@ form button {
   margin: 12px 0;
 }
 
-.user-info-container button {
+.user-info-container button,
+.user-info-container #all {
   width: 200px;
   height: 35px;
   background-color: #fff;
@@ -108,6 +109,13 @@ form button {
   font-weight: 700;
 }
 
+.user-info-container #all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+}
 .users form {
   width: 60%;
 }
@@ -163,6 +171,8 @@ form button {
 
 button:hover,
 button:active,
+#all:hover,
+#all:active,
 .submit-button:hover,
 .submit-button:active {
   background-color: #000;

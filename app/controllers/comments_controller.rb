@@ -7,6 +7,10 @@ class CommentsController < ApplicationController
   def create
     @user = current_user
     @post = Post.find(params[:post_id])
+
+    @post.comments.each do |c|
+      puts "X#{c.user.name} #{c.text}X"
+    end
     @comment = Comment.new(comment_params)
     @comment.user = @user
     @comment.post = @post

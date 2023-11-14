@@ -4,7 +4,7 @@
     
     <div class="users">
         <%= render partial: 'users/blogger', locals: {user: @user} %>
-        <% @user.recent_three_posts.each do |post| %>
+        <% @posts.each do |post| %>
             <%= render partial: 'post', locals: {post: post} %>
             <%= render partial: 'comments', locals: {post: post} %>
         <% end %>
