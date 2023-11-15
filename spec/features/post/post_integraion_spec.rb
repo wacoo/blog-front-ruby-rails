@@ -107,7 +107,6 @@ RSpec.describe 'Post', type: :system do
       click_link '«'
       expect(page).to have_content('Post: Name of the wind')
     end
-    
   end
   context 'show' do
     scenario 'should display the correct post title and author' do
