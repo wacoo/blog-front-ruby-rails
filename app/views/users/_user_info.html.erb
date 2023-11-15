@@ -11,12 +11,5 @@
             </div>
         <% end %>    
     </div>
-    <button id="all">See all posts</button>
+    <%= link_to "See all posts", user_posts_path(user), class: "all" %>
 </div>
-
-<%= javascript_tag do %>
-    document.getElementById('all').addEventListener('click', function() {
-      var userId = '<%= user.id %>';
-      window.location.href = `/users/${userId}/posts`;
-    });
-  <% end %>

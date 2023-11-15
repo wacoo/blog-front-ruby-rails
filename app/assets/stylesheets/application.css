@@ -99,13 +99,23 @@ form button {
   margin: 12px 0;
 }
 
-.user-info-container button {
+.user-info-container button,
+#all {
   width: 200px;
   height: 35px;
   background-color: #fff;
   border: #000 solid 2px;
   border-radius: 5px;
   font-weight: 700;
+  margin-top: 30px;
+}
+
+#all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
 }
 
 .users form {
@@ -163,6 +173,8 @@ form button {
 
 button:hover,
 button:active,
+#all:hover,
+#all:active,
 .submit-button:hover,
 .submit-button:active {
   background-color: #000;
@@ -201,4 +213,15 @@ form textarea {
   width: 60px;
   height: 25px;
   margin-right: 50px;
+}
+
+.li {
+  width: 50px;
+  font-size: 20px;
+  color: #000;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
 }
