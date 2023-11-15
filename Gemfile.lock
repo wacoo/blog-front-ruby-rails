@@ -78,6 +78,7 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
     base64 (0.1.1)
+    bcrypt (3.1.19)
     bigdecimal (3.1.4)
     bindex (0.8.1)
     bootsnap (1.17.0)
@@ -99,6 +100,12 @@ GEM
     debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    devise (4.9.3)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
     diff-lcs (1.5.0)
     drb (2.1.1)
       ruby2_keywords
@@ -148,6 +155,7 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
+    orm_adapter (0.5.0)
     parallel (1.23.0)
     parser (3.2.2.4)
       ast (~> 2.4.1)
@@ -211,6 +219,9 @@ GEM
     regexp_parser (2.8.2)
     reline (0.3.9)
       io-console (~> 0.5)
+    responders (3.1.1)
+      actionpack (>= 5.2)
+      railties (>= 5.2)
     rexml (3.2.6)
     rspec-core (3.12.2)
       rspec-support (~> 3.12.0)
@@ -269,6 +280,8 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -292,6 +305,7 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  devise (~> 4.9)
   faker
   importmap-rails
   jbuilder
@@ -325,6 +339,7 @@ CHECKSUMS
   addressable (2.8.5) sha256=63f0fbcde42edf116d6da98a9437f19dd1692152f1efa3fcc4741e443c772117
   ast (2.4.2) sha256=1e280232e6a33754cde542bc5ef85520b74db2aac73ec14acef453784447cc12
   base64 (0.1.1) sha256=0c75d351a429b5176a476cd8a3740cff3277d2bac26a50b5c7456c266e9acd33
+  bcrypt (3.1.19) sha256=e94fe5cac1c9da5ddced396fb565789f9cdcc477ecbfdf539e3a7acdaa669991
   bigdecimal (3.1.4) sha256=de0c967bb24afe45e0e3d2d65e376614a430c3bc70563ac21cb3518f7409c61f
   bindex (0.8.1) sha256=7b1ecc9dc539ed8bccfc8cb4d2732046227b09d6f37582ff12e50a5047ceb17e
   bootsnap (1.17.0) sha256=6b0ea4dd68f0d424968dcd13953c3f04b13a19a8761c540d3af13507fcfa1347
@@ -335,6 +350,7 @@ CHECKSUMS
   crass (1.0.6) sha256=dc516022a56e7b3b156099abc81b6d2b08ea1ed12676ac7a5657617f012bd45d
   date (3.3.3) sha256=819792019d5712b748fb15f6dfaaedef14b0328723ef23583ea35f186774530f
   debug (1.8.0) sha256=502bd1ad41a9a4b51f557f181cd13650c746390a82b5d11a5d2c81600ca013da
+  devise (4.9.3) sha256=480638d6c51b97f56da6e28d4f3e2a1b8e606681b316aa594b87c6ab94923488
   diff-lcs (1.5.0) sha256=49b934001c8c6aedb37ba19daec5c634da27b318a7a3c654ae979d6ba1929b67
   drb (2.1.1) sha256=6b8f481d9a9a7528c41d4f66484a4a73d2204f095da8ab141b5ea0aa22162c41
   erubi (1.12.0) sha256=27bedb74dfb1e04ff60674975e182d8ca787f2224f2e8143268c7696f42e4723
@@ -361,6 +377,7 @@ CHECKSUMS
   net-smtp (0.4.0) sha256=2d7eb8de289ba8dce3f0d436ee40b9366bea28354c5ba183c8ab2ec05139a3e7
   nio4r (2.5.9) sha256=0e9d160662fd38d5a26cfe75308f32dfebe4c0523bceaa86873838c93f3a2971
   nokogiri (1.15.4-x86_64-linux) sha256=872ced3d72d797ed9b5a76c67141c6cee7589711358e11c73e9c53724ffd1842
+  orm_adapter (0.5.0) sha256=aa5d0be5d540cbb46d3a93e88061f4ece6a25f6e97d6a47122beb84fe595e9b9
   parallel (1.23.0) sha256=27154713ad6ef32fa3dcb7788a721d6c07bca77e72443b4c6080a14145288c49
   parser (3.2.2.4) sha256=edbe6751f85599c8152173ccadbd708f444b7214de2a1d4969441a68e06ac964
   pg (1.5.4) sha256=04f7b247151c639a0b955d8e5a9a41541343f4640aa3c2bdf749a872c339d25d
@@ -384,6 +401,7 @@ CHECKSUMS
   redis-client (0.18.0) sha256=a93bd1f99c024bb7f8e21eff7bdbcb16d85dbcbfe3f6ed051239e38d4c127704
   regexp_parser (2.8.2) sha256=5e65506e536e4f14ce2cd98a3daecf20b88ac77b6268412928bec98c872e2ab5
   reline (0.3.9) sha256=4a024da0e1802086efe9c7c2de9546c1f3f38fab269b29ff6e13b53393bc0705
+  responders (3.1.1) sha256=92f2a87e09028347368639cfb468f5fefa745cb0dc2377ef060db1cdd79a341a
   rexml (3.2.6) sha256=e0669a2d4e9f109951cb1fde723d8acd285425d81594a2ea929304af50282816
   rspec-core (3.12.2) sha256=155b54480f28e2b2813185077fe435c2d663031616360ed3b179a9d6a55d2551
   rspec-expectations (3.12.3) sha256=093d18e2e7e0a2c619ef8f7343d442fc6c0793fb7897d56f16f26c8a9d244416
@@ -405,6 +423,7 @@ CHECKSUMS
   turbo-rails (1.5.0) sha256=b426cc762fb0940277729b3f1751a9f0bd269f5613c1d62ac73e5f0be7c7a83e
   tzinfo (2.0.6) sha256=8daf828cc77bcf7d63b0e3bdb6caa47e2272dcfaf4fbfe46f8c3a9df087a829b
   unicode-display_width (2.5.0) sha256=7e7681dcade1add70cb9fda20dd77f300b8587c81ebbd165d14fd93144ff0ab4
+  warden (1.2.9) sha256=46684f885d35a69dbb883deabf85a222c8e427a957804719e143005df7a1efd0
   web-console (4.2.1) sha256=e7bcf37a10ea2b4ec4281649d1cee461b32232d0a447e82c786e6841fd22fe20
   webrick (1.8.1) sha256=19411ec6912911fd3df13559110127ea2badd0c035f7762873f58afc803e158f
   websocket (1.2.10) sha256=2cc1a4a79b6e63637b326b4273e46adcddf7871caa5dc5711f2ca4061a629fa8
