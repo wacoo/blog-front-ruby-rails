@@ -8,6 +8,11 @@
             <%= render partial: 'post', locals: {post: post} %>
             <%= render partial: 'comments', locals: {post: post} %>
         <% end %>
+        <ul class="pagination">
+            <li>
+                <%= will_paginate @articles, previous_label: '&laquo;', next_label: '&raquo;', class: 'small-font', outer_window: 1, inner_window: 0, container: false %>
+            </li>
+        </ul>
     </div>
     
 </div>

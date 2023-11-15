@@ -55,7 +55,6 @@ RSpec.describe 'Post', type: :system do
     scenario 'should show post titles' do
       visit user_posts_path(user1)
       expect(page).to have_content('Post: Name of the wind')
-      expect(page).to have_content('Post: Name of the fire')
       expect(page).to have_content('Post: Name of the earth')
       expect(page).to have_content('Post: Name of the water')
     end
@@ -68,6 +67,7 @@ RSpec.describe 'Post', type: :system do
 
     scenario 'should show first few comments' do
       visit user_posts_path(user1)
+      click_link '2'
       expect(page).to have_content('Comments')
       expect(page).to have_content('Hey nice post!')
       expect(page).to have_content('Hey great post!')
@@ -79,19 +79,35 @@ RSpec.describe 'Post', type: :system do
   context 'index...' do
     scenario 'should show the number of comments for post' do
       visit user_posts_path(user1)
+      click_link '2'
       expect(page).to have_content('Comments: 4')
     end
 
     scenario 'should show the number of like for a post' do
       visit user_posts_path(user1)
+      click_link '2'
       expect(page).to have_content('Likes: 2')
     end
 
     scenario 'should redirect to the right post' do
       visit user_posts_path(user1)
+      click_link '2'
       click_link 'Post: Name of the fire'
       expect(page).to have_current_path(user_post_path(user1, @post2))
     end
+
+    scenario 'pagination links should work' do
+      visit user_posts_path(user1)
+      click_link '2'
+      expect(page).to have_content('Post: Name of the fire')
+      click_link '1'
+      expect(page).to have_content('Post: Name of the wind')
+      click_link '»'
+      expect(page).to have_content('Post: Name of the fire')
+      click_link '«'
+      expect(page).to have_content('Post: Name of the wind')
+    end
+    
   end
   context 'show' do
     scenario 'should display the correct post title and author' do

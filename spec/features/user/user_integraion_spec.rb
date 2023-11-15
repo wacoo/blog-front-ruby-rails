@@ -64,6 +64,13 @@ RSpec.describe 'User', type: :system do
       visit user_path(user1)
       expect(page).to have_content('This is John\'s bio')
     end
+
+    scenario 'should display users first three posts' do
+      visit user_path(user1)
+      expect(page).to have_content('Name of the water')
+      expect(page).to have_content('Name of the earth')
+      expect(page).to have_content('Name of the fire')
+    end
   end
   context 'show...' do
     scenario 'should display correct post titles and text' do
