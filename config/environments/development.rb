@@ -80,11 +80,11 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
+    address: 'sandbox.smtp.mailtrap.io',
     port: 587,
-    domain: 'your-domain.com',
-    user_name: 'your-email@gmail.com',
-    password: 'your-password',
+    domain: 'example.com',
+    user_name: '1a8f9d2074067c',
+    password: 'cc678ba15548b7',
     authentication: 'plain',
     enable_starttls_auto: true
   }
