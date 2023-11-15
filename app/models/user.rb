@@ -2,7 +2,7 @@ class User < ApplicationRecord
   before_validation :set_default_posts_counter
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable
 
   has_many :posts, foreign_key: :author_id
