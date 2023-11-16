@@ -7,20 +7,26 @@ class CommentsController < ApplicationController
   def create
     @user = current_user
     @post = Post.find(params[:post_id])
-
-    @post.comments.each do |c|
-      puts "X#{c.user.name} #{c.text}X"
-    end
     @comment = Comment.new(comment_params)
     @comment.user = @user
     @comment.post = @post
-    puts @post
     if @comment.save
       redirect_to user_post_url(@user, @post), notice: 'Comment created successfully.'
     else
       flash.now[:error] = 'Failed to create a comment.'
       render 'posts/show'
     end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @user = @comment.user
+    @post = @comment.post
+    authorize! :destroy, @comment
+
+    @post.comments_counter -= 1
+    @comment.destroy
+    redirect_to user_post_path(@post.author, @post), notice: 'Comment deleted successfully.'
   end
 
   private

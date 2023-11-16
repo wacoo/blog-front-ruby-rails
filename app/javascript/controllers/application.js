@@ -1,3 +1,5 @@
+//= require jquery
+//= require rails-ujs
 import { Application } from "@hotwired/stimulus"
 
 const application = Application.start()

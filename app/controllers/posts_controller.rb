@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   layout 'application'
+  load_and_authorize_resource
 
   def index
     @user = User.includes(posts: :comments).find(params[:user_id])
@@ -34,6 +35,17 @@ class PostsController < ApplicationController
       flash.now[:error] = 'Failed to create the post.'
       render 'new'
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    authorize! :destroy, @post
+
+    @post.likes.destroy_all
+    @post.comments.destroy_all
+    @post.author.posts_counter -= 1
+    @post.destroy
+    redirect_to user_posts_path(@post.author), notice: 'Post deleted successfully.'
   end
 
   private
