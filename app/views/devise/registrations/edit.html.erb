@@ -46,6 +46,11 @@
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
+  <div class="field">
+    <%= f.label :role %>
+    <%= f.select :role, options_for_select(['Regular User', 'Administrator']), { include_blank: 'Select Role' }, class: "select" %>
+  </div>
+  
   <div class="actions">
     <%= f.submit "Update" %>
   </div>

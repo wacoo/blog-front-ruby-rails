@@ -2,7 +2,14 @@
     <div class="posts-comments">
         <h2>Comments</h2>
         <% post.comments.each do |comment| %>
-            <p><%= comment.user.name%>: <%= comment.text %></p>
+            <div class="del-comment">
+                <p><%= comment.user.name %>: <%= comment.text %></p>
+                <% if can?(:destroy, comment) %>
+                    <%= form_with(model: comment, url: user_post_comment_path(user_id: comment.user.id, post_id: post.id, id: comment.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete') do |form| %>
+                        <%= form.submit 'Delete comment', id: 'all' %>
+                    <% end %>
+                <% end %>
+            </div>
         <% end %>
     </div>
 </div>
