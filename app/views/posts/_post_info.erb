@@ -11,7 +11,7 @@
         <%= render 'likes/new', like: @like %>
     </div>
     <!-- Delete button -->
-    <% if can?(:destroy, @comment) %>
+    <% if can?(:destroy, @post) %>
         <%= form_with(model: @post, url: user_post_path(user_id: @post.author.id, id: @post.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete') do |form| %>
             <%= form.submit 'Delete post', id: 'all' %>
         <% end %>

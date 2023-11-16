@@ -10,12 +10,9 @@ class Ability
     #   else
     #     can :read, :all
     #   end
-
-    can :destroy, Post, author_id: user.id
-    can :destroy, Comment, user_id: user.id
-    return unless user.role == 'Administrator'
-
-    can :destroy, Post
-    can :destroy, Comment
+    can :manage, Post, author: user
+    can :manage, Comment, user: user
+    can :manage, :all if user.role == 'Administrator'
+    can :read, :all
   end
 end
