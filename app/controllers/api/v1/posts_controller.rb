@@ -1,6 +1,6 @@
 class Api::V1::PostsController < ApplicationController
+  skip_before_action :authenticate_user!
   layout 'application'
-  load_and_authorize_resource
 
   def index
     @user = User.includes(posts: :comments).find(params[:user_id])
