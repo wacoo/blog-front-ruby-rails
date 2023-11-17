@@ -1,18 +1,16 @@
 class PostsController < ApplicationController
   layout 'application'
-  load_and_authorize_resource
 
   def index
     @user = User.includes(posts: :comments).find(params[:user_id])
     @posts = @user.posts.includes(:comments).paginate(page: params[:page], per_page: 3)
-
+    
     render 'index'
   end
 
   def show
     @post = Post.find(params[:id])
     @user = current_user
-    puts @user.name
     render 'show'
   end
 
