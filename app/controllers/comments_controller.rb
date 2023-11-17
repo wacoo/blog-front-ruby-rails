@@ -1,11 +1,4 @@
 class CommentsController < ApplicationController
-
-  def index
-    @post = Post.find(params[:post_id])
-    @comments = Comment.where(post: @post)
-    render json: @comments
-  end
-
   def new
     @comment = Comment.new
     @user = current_user
@@ -17,16 +10,11 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user = @user
     @comment.post = @post
-
-    if @user.valid_password?(params[:password]) && @user.email == params[:email]
-      if @comment.save
-        redirect_to user_post_url(@user, @post), notice: 'Comment created successfully.'
-      else
-        flash.now[:error] = 'Failed to create a comment.'
-        render 'posts/show'
-      end
+    if @comment.save
+      redirect_to user_post_url(@user, @post), notice: 'Comment created successfully.'
     else
-      flash.now[:error] = 'Invalid email or password.'
+      flash.now[:error] = 'Failed to create a comment.'
+      render 'posts/show'
     end
   end
 
