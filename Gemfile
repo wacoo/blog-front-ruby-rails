@@ -6,7 +6,7 @@ gem 'jquery-rails'
 gem 'rails-controller-testing'
 gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'will_paginate'
-
+gem 'rake', '~> 13.1'
 ruby '2.7.4'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
@@ -75,3 +75,5 @@ group :test do
 end
 
 gem 'devise', '~> 4.9'
+gem 'devise-jwt'
+gem 'rack-cors'

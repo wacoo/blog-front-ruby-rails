@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   layout 'application'
+  
 
   def index
     @users = User.includes(:posts)
