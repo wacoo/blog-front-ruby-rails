@@ -1,8 +1,8 @@
 class Api::V1::CommentsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @post = Post.find(params[:post_id])
-    @comments = Comment.where(post: @post)
+    @post = Post.find_by(id: params[:post_id], author: params[:user_id])
+    @comments = @post.comments
     render json: @comments
   end
 
@@ -13,11 +13,9 @@ class Api::V1::CommentsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @post = Post.find(params[:post_id])
-    @comment = Comment.new(comment_params)
-    @comment.user = @user
-    @comment.post = @post
+    @post = Post.find_by(user_id:params[:user_id], post_id:params[:post_id])
+    new_comment = current_user.comments.new(comment_params)
+    new_comment.post = @post
 
     if @comment.save
       render json: { message: 'Comment created successfully.' }, status: :created
