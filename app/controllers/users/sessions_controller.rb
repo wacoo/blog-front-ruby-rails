@@ -1,6 +1,11 @@
 class Users::SessionsController < Devise::SessionsController
+    protect_from_forgery with: :null_session
     respond_to :json
   
+    def get_csrf_token
+      render json: { csrf_token: form_authenticity_token }
+    end
+
     private
   
     def respond_with(resource, _opts = {})

@@ -1,6 +1,5 @@
 class Api::V1::CommentsController < ApplicationController
-  skip_before_action :authenticate_user!
-  protect_from_forgery unless: -> { request.format.json? }
+  before_action :authenticate_user!
   def index
     @post = Post.find(params[:post_id])
     @comments = Comment.where(post: @post)
