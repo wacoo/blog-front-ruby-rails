@@ -146,6 +146,8 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (2.6.3)
+    json-schema (3.0.0)
+      addressable (>= 2.8)
     jwt (2.7.1)
     language_server-protocol (3.17.0.3)
     loofah (2.22.0)
@@ -261,6 +263,20 @@ GEM
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
     rspec-support (3.12.1)
+    rswag (2.11.0)
+      rswag-api (= 2.11.0)
+      rswag-specs (= 2.11.0)
+      rswag-ui (= 2.11.0)
+    rswag-api (2.11.0)
+      railties (>= 3.1, < 7.2)
+    rswag-specs (2.11.0)
+      activesupport (>= 3.1, < 7.2)
+      json-schema (>= 2.2, < 4.0)
+      railties (>= 3.1, < 7.2)
+      rspec-core (>= 2.14)
+    rswag-ui (2.11.0)
+      actionpack (>= 3.1, < 7.2)
+      railties (>= 3.1, < 7.2)
     rubocop (1.57.2)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -344,6 +360,7 @@ DEPENDENCIES
   rake (~> 13.1)
   redis (>= 4.0.1)
   rspec-rails
+  rswag
   rubocop (>= 1.0, < 2.0)
   selenium-webdriver
   sprockets-rails
@@ -397,6 +414,7 @@ CHECKSUMS
   jbuilder (2.11.5) sha256=ea6234b334f4afc9205eaa136729da2904731ca01ff05d4db3173b70ebeba8c0
   jquery-rails (4.6.0) sha256=3c4e6bf47274340b44d836b8aa1b5472c6d451e2739af5ec094421f39025a7e2
   json (2.6.3) sha256=86aaea16adf346a2b22743d88f8dcceeb1038843989ab93cda44b5176c845459
+  json-schema (3.0.0) sha256=2452cbc42de5f163feafa4bb0fa2c0f1fa5599e3fdf3ab3844b628e507aabb3d
   jwt (2.7.1) sha256=07357cd2f180739b2f8184eda969e252d850ac996ed0a23f616e8ff0a90ae19b
   language_server-protocol (3.17.0.3) sha256=3d5c58c02f44a20d972957a9febe386d7e7468ab3900ce6bd2b563dd910c6b3f
   loofah (2.22.0) sha256=10d76e070c86b12fec74b6a9515fd1940f4459198b991342d0a7897d86c372fe
@@ -445,6 +463,10 @@ CHECKSUMS
   rspec-mocks (3.12.6) sha256=de51a4148ba2ce6f1c1646a2a03e9df2f52da9a42b164f2e7467b2cbe37e07bf
   rspec-rails (6.0.3) sha256=6d1812cfaf18dba5a08d7e30c85149b24a220fae064853a96e451376be6fd820
   rspec-support (3.12.1) sha256=f969b85d0068ff97bc47c9d6fc2bca9706d73406f2b4e5d3b346443d8734c8cf
+  rswag (2.11.0) sha256=d78f9f0b3d0e35b65afdaa478bee22eaba39ef25504243316f915d6d8e0470b9
+  rswag-api (2.11.0) sha256=ab1fad4c7893e3dfccc4ebbbdc612c858b0684592591c93b360631b894ef526f
+  rswag-specs (2.11.0) sha256=d684a23cdbfb4d708410a7a1abfa3f2f3a8042a5d2c3776662bd9b58824f931b
+  rswag-ui (2.11.0) sha256=9c789a3d2c81f6552b826ed24ff9fd59c14cc29ccc014dea5b2bcb765b72b82e
   rubocop (1.57.2) sha256=8f679dfe42d7821dc61dafb17d14b1294343157a197b9f8a23720ca17fb9161b
   rubocop-ast (1.30.0) sha256=faad6452b1018fee0dd9e21a44445908e94ee2a4435932a9dae0e0740b6349b3
   ruby-progressbar (1.13.0) sha256=80fc9c47a9b640d6834e0dc7b3c94c9df37f08cb072b7761e4a71e22cff29b33
